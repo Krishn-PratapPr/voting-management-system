@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';  // Include your database connection
+include '../db.php';  // Include your database connection
 
 // Handle the login logic
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {

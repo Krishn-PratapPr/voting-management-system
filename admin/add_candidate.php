@@ -1,5 +1,10 @@
 <?php
+session_start();
 include '../db.php';  // Include your database connection
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    header('Location: adminlogin.php');
+    exit;
+}
 
 // Fetch elections for the select dropdown
 $electionsStmt = $pdo->prepare("SELECT * FROM elections");
@@ -30,12 +35,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_candidate'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Candidate</title>
-    <link rel="stylesheet" href="../style.css">  <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">  <!-- Link to your CSS file -->
 </head>
 <body>
 <div class="navbar">
-    <span class="admin-title">Admin Panel</span>
-    <a href="../admin.php" class="back-btn">&#8592; </a>
+<a href="admin.php" class="back-btn" style="width:10%">&#8592; </a>
+<span class="admin-title" style="width:90%">Admin Panel</span>
 </div>
 <div class="container">
     <h2>Add New Candidate</h2>

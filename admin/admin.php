@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';  // Include your database connection
+include '../db.php';  // Include your database connection
 
 // Redirect to admin login if not logged in as admin
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {

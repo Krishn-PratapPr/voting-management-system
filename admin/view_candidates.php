@@ -1,6 +1,10 @@
 <?php
-include '../db.php';  // Correct path to db.php
-
+session_start();
+include '../db.php';  // Include your database connection
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    header('Location: adminlogin.php');
+    exit;
+}
 // Fetch candidates data
 $stmt = $pdo->prepare("SELECT candidates.id, candidates.name, elections.name AS election_name, candidates.votes
                        FROM candidates
@@ -15,12 +19,12 @@ $candidates = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Candidates</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="navbar">
-    <span class="admin-title">Admin Panel</span>
-    <a href="../admin.php" class="back-btn">&#8592; </a>
+<a href="admin.php" class="back-btn" style="width:10%">&#8592; </a>
+<span class="admin-title" style="width:90%">Admin Panel</span>
 </div>
 <div class="container">
     <h2>All Candidates</h2>

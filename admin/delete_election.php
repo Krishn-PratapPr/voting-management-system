@@ -1,5 +1,10 @@
 <?php
-include '../db.php';  // Correct path to db.php
+session_start();
+include '../db.php';  // Include your database connection
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    header('Location: adminlogin.php');
+    exit;
+}
 
 if (isset($_GET['id'])) {
     $election_id = $_GET['id'];
