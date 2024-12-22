@@ -38,8 +38,9 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<div class="admin-header">
+<div class="navbar">
     <span class="admin-title">Admin Panel</span>
+    <a href="../admin.php" class="back-btn">&#8592; </a>
 </div>
 <div class="container">
     <h2>Edit Election</h2>

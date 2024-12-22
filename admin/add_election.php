@@ -30,8 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_election'])) {
     <link rel="stylesheet" href="../style.css">  <!-- Link to your CSS file -->
 </head>
 <body>
-<div class="admin-header">
+<div class="navbar">
     <span class="admin-title">Admin Panel</span>
+    <a href="../admin.php" class="back-btn">&#8592; </a>
 </div>
 <div class="container">
     <h2>Add New Election</h2>

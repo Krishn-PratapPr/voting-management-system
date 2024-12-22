@@ -13,11 +13,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
+    <title>Register</title>
+</head>
+<body>
+<div class="navbar">
+    <a href="index.php">Home</a>
+    <a href="register.php">Register</a>
+    <a href="login.php" class="active">Login</a>
+</div>
+<div class="container login-form">
+<h1>Register</h1>
 <form method="POST">
     Username: <input type="text" name="username" required><br>
     Email: <input type="email" name="email" required><br>
     Password: <input type="password" name="password" required><br>
     <button type="submit">Register</button>
 </form>
+</div>
+</body>
+</html>
+  
