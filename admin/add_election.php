@@ -125,7 +125,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_election'])) {
 </head>
 <body>
 <div class="navbar">
-    <a href="admin.php" class="back-btn">&#8592;</a>
     <span class="admin-title">Admin Panel</span>
 </div>
 

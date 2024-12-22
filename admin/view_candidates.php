@@ -23,7 +23,6 @@ $candidates = $stmt->fetchAll();
 </head>
 <body>
 <div class="navbar">
-<a href="admin.php" class="back-btn" style="width:10%">&#8592; </a>
 <span class="admin-title" style="width:90%">Admin Panel</span>
 </div>
 <div class="container">
